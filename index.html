@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bank DApp</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <h1>Bank DApp</h1>
+    <p class="subtitle">ระบบฝากและถอนเงินด้วย Smart Contract</p>
+
+    <section class="card">
+      <h2>ข้อมูลนักศึกษา</h2>
+      <p>รหัสนักศึกษา: <span>66013716</span></p>
+      <p>ชื่อ-สกุล: <span>พุฒิเทพ แก้วเกษ</span></p>
+    </section>
+
+    <section class="card">
+      <h2>เชื่อมต่อ Wallet</h2>
+      <button id="connectButton">Connect MetaMask</button>
+      <p id="walletAddress">ยังไม่ได้เชื่อมต่อ</p>
+      <p id="networkStatus">ยังไม่ได้ตรวจสอบเครือข่าย</p>
+    </section>
+
+    <section class="card balance">
+      <h2>ยอดเงินในบัญชี</h2>
+      <p id="balance">- ETH</p>
+      <button id="refreshButton">Check Balance</button>
+    </section>
+
+    <section class="card">
+      <h2>ฝากเงิน</h2>
+      <label for="depositAmount">จำนวน ETH</label>
+      <input id="depositAmount" type="number"
+        min="0" step="any" placeholder="0.00001">
+      <button id="depositButton">Deposit</button>
+    </section>
+
+    <section class="card">
+      <h2>ถอนเงิน</h2>
+      <label for="withdrawAmount">จำนวน ETH</label>
+      <input id="withdrawAmount" type="number"
+        min="0" step="any" placeholder="0.00001">
+      <button id="withdrawButton">Withdraw</button>
+    </section>
+
+    <section class="card">
+      <h2>สถานะการทำงาน</h2>
+      <p id="status" role="status">กรุณาเชื่อมต่อ MetaMask</p>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/ethers@6/dist/ethers.umd.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
+
+
+      <!-- type="number" — กำหนดให้กรอกตัวเลข
+            min="0" — กำหนดค่าต่ำสุดเป็น 0
+            step="any" — อนุญาตให้กรอกทศนิยมได้ เช่น 0.1, 0.01 หรือ 0.001
+            placeholder="0.01" — แสดงตัวอย่างในช่องกรอก ยังไม่ใช่ค่าที่ถูกกรอกจริง -->
